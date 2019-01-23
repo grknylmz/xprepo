@@ -4,8 +4,7 @@ import * as cookieParser from "cookie-parser";
 import * as express from "express";
 import * as logger from "morgan";
 import * as path from "path";
-import * as mongoose from 'mongoose';
-
+import { mongoAgent } from '../util/mongo';
 export default function (db) {
     var app: express.Express = express();
 
@@ -13,10 +12,10 @@ export default function (db) {
         require(path.resolve(model));
     }
 
+
     if (config.useMongo) {
-        mongoose.connect(config.mongodb, {
-            promiseLibrary: global.Promise
-        }).catch(() => { console.log("Error connecting to mongos"); });
+        mongoAgent.connect();
+        mongoAgent.getCategories();
     }
 
     app.set("views", path.join(__dirname, "../../src/views"));

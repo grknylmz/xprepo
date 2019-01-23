@@ -5,6 +5,7 @@ npm-debug.log
 *.tmp.txt
 *.cache
 typings
+dist
 bin
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

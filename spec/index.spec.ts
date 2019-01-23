@@ -18,7 +18,7 @@ describe("Index Controller", function () {
     });
 
     it("Can get get json", () => {
-        indexController.msg(null, res);
+        //indexController.msg(null, res);
         var data = JSON.parse(res._getData());
         expect(data.msg).to.equal("Hello!");
     })
