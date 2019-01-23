@@ -12,10 +12,8 @@ export default function (db) {
         require(path.resolve(model));
     }
 
-
     if (config.useMongo) {
         mongoAgent.connect();
-        mongoAgent.getCategories();
     }
 
     app.set("views", path.join(__dirname, "../../src/views"));
