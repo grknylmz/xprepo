@@ -4,7 +4,10 @@ var http = require("http");
 var config_1 = require("./config/config");
 var app = require("./config/express").default();
 var server = http.createServer(app);
-server.listen(config_1.default.port);
+var port = process.env.PORT || 8000;
+server.listen(port, function () {
+    console.log("App is running on port " + port);
+});
 server.on("error", function (e) {
     console.log("Error starting server" + e);
 });
