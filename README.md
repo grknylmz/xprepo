@@ -13,7 +13,7 @@ To serve:
 npm run serve
 ```
 
-To debug
+To debug:
 ```
 npm run debug
 ```
@@ -22,6 +22,9 @@ npm run debug
 
 Browse to http://localhost:8000
 
-// endpoints
+Endpoints:
+```
 "/getCategories" - implemented
+```
 "/createCategory" - implemented
+```
