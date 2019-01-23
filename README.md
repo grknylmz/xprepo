@@ -26,5 +26,6 @@ Endpoints:
 ```
 "/getCategories" - implemented
 ```
+```
 "/createCategory" - implemented
 ```
