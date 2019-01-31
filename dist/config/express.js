@@ -7,6 +7,7 @@ var express = require("express");
 var logger = require("morgan");
 var path = require("path");
 var mongo_1 = require("../util/mongo");
+var cors = require("cors");
 function default_1(db) {
     var app = express();
     for (var _i = 0, _a = config_1.default.globFiles(config_1.default.models); _i < _a.length; _i++) {
@@ -16,8 +17,11 @@ function default_1(db) {
     if (config_1.default.useMongo) {
         mongo_1.mongoAgent.connect();
     }
+    //View engine
     app.set("views", path.join(__dirname, "../../src/views"));
     app.set("view engine", "jade");
+    //Packages
+    app.use(cors());
     app.use(logger("dev"));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
