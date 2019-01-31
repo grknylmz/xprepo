@@ -6,9 +6,7 @@ export default class Config {
 	public static routes: string = "./dist/routes/**/*.js";
 	public static models: string = "./dist/models/**/*.js";
 	public static useMongo: boolean = true;
-	public static mongodb = process.env.NODE_ENV === 'docker' ?
-		'mongodb://mongo:27017/express-typescript-starter' :
-		'mongodb://localhost:27017/express-typescript-starter';
+	public static mongodb = 'mongodb://emsworks:grk426333@ds127101.mlab.com:27101/xprepo';
 	public static globFiles(location: string): string[] {
 		return union([], sync(location));
 	}

@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
+import * as config from '../config/config'
 class MongoAgent {
-  private db = "mongodb://emsworks:grk426333@ds127101.mlab.com:27101/xprepo";
+  private db = config.default.mongodb;
 
   public connect() {
     mongoose

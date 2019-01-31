@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require("mongoose");
+var config = require("../config/config");
 var MongoAgent = /** @class */ (function () {
     function MongoAgent() {
-        this.db = "mongodb://emsworks:grk426333@ds127101.mlab.com:27101/xprepo";
+        this.db = config.default.mongodb;
     }
     MongoAgent.prototype.connect = function () {
         mongoose

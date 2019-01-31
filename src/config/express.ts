@@ -17,9 +17,11 @@ export default function (db) {
     if (config.useMongo) {
         mongoAgent.connect();
     }
+
     //View engine
     app.set("views", path.join(__dirname, "../../src/views"));
     app.set("view engine", "jade");
+    
     //Packages
     app.use(cors());
     app.use(logger("dev"));

@@ -12,9 +12,7 @@ var Config = /** @class */ (function () {
     Config.routes = "./dist/routes/**/*.js";
     Config.models = "./dist/models/**/*.js";
     Config.useMongo = true;
-    Config.mongodb = process.env.NODE_ENV === 'docker' ?
-        'mongodb://mongo:27017/express-typescript-starter' :
-        'mongodb://localhost:27017/express-typescript-starter';
+    Config.mongodb = 'mongodb://emsworks:grk426333@ds127101.mlab.com:27101/xprepo';
     return Config;
 }());
 exports.default = Config;
