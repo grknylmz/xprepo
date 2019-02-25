@@ -10,11 +10,11 @@ export interface ISubject extends mongoose.Document {
 }
 
 export const SubjectSchema = new mongoose.Schema({
-  user: { type: String, required: true },
-  subject: { type: String, required: true },
-  review: { type: String, required: true },
-  voteCount: { type: Number, required: true },
-  approved: { type: Boolean, required: true }
+  user: { type: String, required: false },
+  subject: { type: String, required: false },
+  review: { type: String, required: false },
+  voteCount: { type: Number, required: false },
+  approved: { type: Boolean, required: false }
 });
 
 const Subject = mongoose.model("Subject", SubjectSchema);

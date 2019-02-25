@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require("mongoose");
 exports.SubjectSchema = new mongoose.Schema({
-    user: { type: String, required: true },
-    subject: { type: String, required: true },
-    review: { type: String, required: true },
-    voteCount: { type: Number, required: true },
-    approved: { type: Boolean, required: true }
+    user: { type: String, required: false },
+    subject: { type: String, required: false },
+    review: { type: String, required: false },
+    voteCount: { type: Number, required: false },
+    approved: { type: Boolean, required: false }
 });
 var Subject = mongoose.model("Subject", exports.SubjectSchema);
 var SubjectAgent = /** @class */ (function () {
