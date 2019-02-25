@@ -24,7 +24,7 @@ var SubjectAgent = /** @class */ (function () {
         });
     };
     SubjectAgent.prototype.getSubjects = function (req, res) {
-        var subjects = Subject.find(function (err, subjects) {
+        Subject.find(function (err, subjects) {
             if (err) {
                 res.send(err);
             }

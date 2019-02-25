@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require("mongoose");
-;
 exports.CategorySchema = new mongoose.Schema({
     category: { type: String, required: true }
 });
-var Category = mongoose.model('Category', exports.CategorySchema);
+var Category = mongoose.model("Category", exports.CategorySchema);
 var CategoryAgent = /** @class */ (function () {
     function CategoryAgent() {
     }
@@ -21,7 +20,7 @@ var CategoryAgent = /** @class */ (function () {
         });
     };
     CategoryAgent.prototype.getCategories = function (req, res) {
-        var categories = Category.find(function (err, categories) {
+        Category.find(function (err, categories) {
             if (err) {
                 res.send(err);
             }
