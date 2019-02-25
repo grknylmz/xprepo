@@ -1,29 +1,29 @@
-import { Request, Response } from 'express';
-import * as mongoose from 'mongoose';
+import { Request, Response } from "express";
+import * as mongoose from "mongoose";
 
 export interface ICategory extends mongoose.Document {
   category: string;
-};
+}
 
 export const CategorySchema = new mongoose.Schema({
   category: { type: String, required: true }
 });
 
-const Category = mongoose.model('Category', CategorySchema);
+const Category = mongoose.model("Category", CategorySchema);
 
 class CategoryAgent {
   public createCategory(req: Request, res: Response) {
-    var category = new Category(req.body);
+    let category = new Category(req.body);
     category.save((err: any) => {
       if (err) {
-        res.send(err)
+        res.send(err);
       } else {
-        res.send(category)
+        res.send(category);
       }
     });
   }
   public getCategories(req: Request, res: Response) {
-    let categories = Category.find((err: any, categories: any) => {
+    Category.find((err: any, categories: any) => {
       if (err) {
         res.send(err);
       } else {
