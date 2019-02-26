@@ -26,7 +26,8 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.4.6",
     "morgan": "^1.6.1",
-    "negotiator": "^0.6.1"
+    "negotiator": "^0.6.1",
+    "typegoose": "^5.5.1"
   },
   "devDependencies": {
     "@types/chai": "^4.1.3",

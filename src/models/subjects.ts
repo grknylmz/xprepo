@@ -1,22 +1,26 @@
 import { Request, Response } from "express";
 import * as mongoose from "mongoose";
-
-export interface ISubject extends mongoose.Document {
-  user: String;
-  subject: String;
-  review: String;
-  voteCount: Number;
-  approved: Boolean;
-}
-
-export const SubjectSchema = new mongoose.Schema({
-  user: { type: String, required: false },
-  subject: { type: String, required: false },
-  review: { type: String, required: false },
-  voteCount: { type: Number, required: false },
-  approved: { type: Boolean, required: false }
+const Schema = mongoose.Schema;
+const SubjectSchema = new Schema({
+  user: {
+    type: String,
+    required: "Enter a username."
+  },
+  subject: {
+    type: String,
+    required: "Enter a subject."
+  },
+  review: {
+    type: String,
+    required: "Enter a review."
+  },
+  voteCount: {
+    type: Number
+  },
+  approved: {
+    type: Boolean
+  }
 });
-
 const Subject = mongoose.model("Subject", SubjectSchema);
 
 class SubjectAgent {

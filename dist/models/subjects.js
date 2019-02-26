@@ -1,14 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require("mongoose");
-exports.SubjectSchema = new mongoose.Schema({
-    user: { type: String, required: false },
-    subject: { type: String, required: false },
-    review: { type: String, required: false },
-    voteCount: { type: Number, required: false },
-    approved: { type: Boolean, required: false }
+var Schema = mongoose.Schema;
+var SubjectSchema = new Schema({
+    user: {
+        type: String,
+        required: "Enter a username."
+    },
+    subject: {
+        type: String,
+        required: "Enter a subject."
+    },
+    review: {
+        type: String,
+        required: "Enter a review."
+    },
+    voteCount: {
+        type: Number
+    },
+    approved: {
+        type: Boolean
+    }
 });
-var Subject = mongoose.model("Subject", exports.SubjectSchema);
+var Subject = mongoose.model("Subject", SubjectSchema);
 var SubjectAgent = /** @class */ (function () {
     function SubjectAgent() {
     }
