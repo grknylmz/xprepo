@@ -22,10 +22,3 @@ npm run debug
 
 Browse to http://localhost:8000
 
-Endpoints:
-```
-"/getCategories" - implemented
-```
-```
-"/createCategory" - implemented
-```
